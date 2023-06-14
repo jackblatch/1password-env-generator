@@ -1,4 +1,4 @@
-# 1Password .env generator
+# 1Password .env Generator
 Quickly and easily generate your .env file from credentials stored in 1Password.
 
 ## About
@@ -20,3 +20,6 @@ When running the CLI, you will be asked the following questions:
 4. "How would you like the output?" - This is the format of the output. Currently, there are two options:
     1. Actual values: This will output the actual values of the credentials. (e.g., `DB_USER=admin`)
     2. 1Password reference values: This will output the 1Password reference values of the credentials. (e.g., `DB_USER="op://<vault>/<item_name>/<section>/DB_USER"`). When using this format, prefix your app's run command with `op run --no-masking --env-file=".env" -- `. For example, for a Next.js Application you would run `op run --no-masking --env-file=".env" -- npm run dev`. Make sure to replace `.env` with the name of your .env file.
+
+## Notes
+This is an open-source tool and is not affiliated with 1Password.
