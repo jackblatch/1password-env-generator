@@ -17,6 +17,9 @@ In order for the script to run correctly, it expects that an item is created in 
 1. Sections are used to group each of your apps credentials.
 2. Password fields are used to store credentials, with the label of each field named after the environment variable you want to create.
 
+### Example Setup
+![Example Setup](/.github/assets/example-setup.png?raw=0)
+
 ## CLI Guide
 When running the CLI, you will be asked the following questions:
 1. "What is the item's name?" - This is the name of the item in 1Password that contains your credentials.
