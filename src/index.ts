@@ -2,6 +2,7 @@
 import {exec} from 'child_process'
 import { createSpinner } from 'nanospinner'
 import inquirer from 'inquirer';
+import { OnePasswordResponse } from './types.js';
 
 const outputOptions = ["1Password reference values","Actual values"]
 
@@ -46,8 +47,8 @@ const execWithPromise = (command) =>
 const spinner = createSpinner('Fetching entries...\n').start()
 
 let hasEntry;
-execWithPromise(pwCommand).then(res => {
-    const parsedData = JSON.parse(res);
+execWithPromise(pwCommand).then((res: string) => {
+    const parsedData = JSON.parse(res) as OnePasswordResponse;
     parsedData.fields.forEach(item => {
         if (item.section && item.section.label === sectionName.sectionName && item.type === "CONCEALED") {
             if (!hasEntry) {
