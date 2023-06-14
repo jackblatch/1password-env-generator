@@ -11,6 +11,7 @@
   "author": "jackb14",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^9.2.7"
+    "inquirer": "^9.2.7",
+    "nanospinner": "^1.1.0"
   }
 }

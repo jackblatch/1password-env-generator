@@ -1,17 +1,9 @@
 #!/usr/bin/env node
 import {exec} from 'child_process'
+import { createSpinner } from 'nanospinner'
 import inquirer from 'inquirer';
 
-const outputOptions = [
-    {
-        id: 1,
-        name: "1Password reference values",
-    },
-    {
-        id: 2,
-        name: "Actual values",
-    },
-]
+const outputOptions = ["1Password reference values","Actual values"]
 
 const itemName = await inquirer.prompt({
         name: 'itemName',
@@ -34,7 +26,7 @@ const sectionName = await inquirer.prompt({
 const outputPreference = await inquirer.prompt({
         name: 'outputPreference',
         type: "list",
-        choices: outputOptions.map(item => item.name),
+        choices: outputOptions.map(item => item),
         message: "How would you like the output?",
     })
 
@@ -51,18 +43,31 @@ const execWithPromise = (command) =>
     })
   })
 
+const spinner = createSpinner('Fetching entries...\n').start()
+
+let hasEntry;
 execWithPromise(pwCommand).then(res => {
     const parsedData = JSON.parse(res);
     parsedData.fields.forEach(item => {
-        if (item.section && item.section.label === sectionName.sectionName) {
-            if (outputPreference.outputPreference === outputOptions[0].name) {
+        if (item.section && item.section.label === sectionName.sectionName && item.type === "CONCEALED") {
+            if (!hasEntry) {
+                spinner.success({text: "Entries found!"});
+            }
+            hasEntry = true;
+            if (outputPreference.outputPreference === outputOptions[0]) {
                 console.log(`${item.label}="${item.reference}"`)
             } else {
                 console.log(`${item.label}=${item.value}`)
             }
         }
     });
+    if (!hasEntry) {
+        spinner.error({text: "No items found. Please make sure your values are correct and try again."});
+        process.exit(1);
+    }
+    process.exit(0);
   }).catch(() => {
-    console.log("Oops, an error occured. Please make sure your values are correct and try again.")
+    spinner.error({text: "Oops, no results could be found matching those values. Please make sure your values are correct and try again."});
+    process.exit(1);
   })
   
