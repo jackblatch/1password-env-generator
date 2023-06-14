@@ -7,7 +7,12 @@ This script is designed to be used with the 1Password CLI. It will ask you a few
 ## Requirements
 To use this package, the 1Password CLI must be installed on your device and logged in.
 
-## 1Password Credentials Storage
+## Running the script
+To run the script simply enter `npx 1password-env-generator` in your terminal.
+
+![Demo](/.github/assets/demo.gif?raw=0)
+
+## Documentation
 In order for the script to run correctly, it expects that an item is created in 1Password with the following:
 1. Sections are used to group each of your apps credentials.
 2. Password fields are used to store credentials, with the label of each field named after the environment variable you want to create.
