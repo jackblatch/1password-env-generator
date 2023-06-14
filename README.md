@@ -14,7 +14,7 @@ To run the script simply enter `npx 1password-env-generator` in your terminal.
 
 ## Documentation
 In order for the script to run correctly, it expects that an item is created in 1Password with the following:
-1. Sections are used to group each of your apps credentials.
+1. Sections are used to group each of your app's credentials.
 2. Password fields are used to store credentials, with the label of each field named after the environment variable you want to create.
 
 ### Example Setup
@@ -27,7 +27,7 @@ When running the CLI, you will be asked the following questions:
 3. "What section is this item in?" - This is the name of the section in the item that contains the credentials.
 4. "How would you like the output?" - This is the format of the output. Currently, there are two options:
     1. Actual values: This will output the actual values of the credentials. (e.g., `DB_USER=admin`)
-    2. 1Password reference values: This will output the 1Password reference values of the credentials. (e.g., `DB_USER="op://<vault>/<item_name>/<section>/DB_USER"`). When using this format, prefix your app's run command with `op run --no-masking --env-file=".env" -- `. For example, for a Next.js Application you would run `op run --no-masking --env-file=".env" -- npm run dev`. Make sure to replace `.env` with the name of your .env file.
+    2. 1Password reference values: This will output the 1Password reference values of the credentials. (e.g., `DB_USER="op://<vault>/<item_name>/<section>/DB_USER"`). To run your app when using this format in your `.env`, prefix your app's run command with `op run --no-masking --env-file=".env" -- `. For example, for a Next.js Application you would run `op run --no-masking --env-file=".env" -- npm run dev`. Make sure to replace `.env` with the name of your .env file. See more on the official 1Password developer docs [here](https://developer.1password.com/docs/cli/secrets-environment-variables/).
 
 ## Notes
 This is an open-source tool and is not affiliated with 1Password.
