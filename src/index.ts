@@ -47,8 +47,8 @@ const execWithPromise = (command) =>
 const spinner = createSpinner('Fetching entries...\n').start()
 
 let hasEntry;
-execWithPromise(pwCommand).then((res: string) => {
-    const parsedData = JSON.parse(res) as OnePasswordResponse;
+execWithPromise(pwCommand).then((res) => {
+    const parsedData = JSON.parse(res as string) as OnePasswordResponse;
     parsedData.fields.forEach(item => {
         if (item.section && item.section.label === sectionName.sectionName && item.type === "CONCEALED") {
             if (!hasEntry) {
