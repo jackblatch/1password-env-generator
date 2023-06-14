@@ -10,7 +10,7 @@ To use this package, the 1Password CLI must be installed on your device and logg
 ## Running the script
 To run the script simply enter `npx 1password-env-generator` in your terminal.
 
-![Demo](/.github/assets/demo.mp4?raw=0)
+![Demo](/.github/assets/demo.gif?raw=0)
 
 ## Documentation
 In order for the script to run correctly, it expects that an item is created in 1Password with the following:
