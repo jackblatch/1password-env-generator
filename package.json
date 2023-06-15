@@ -1,16 +1,19 @@
 {
-  "name": "1password-env-generator",
+  "name": "@jackblatch/1password-env-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Quickly and easily generate your .env file from credentials stored in 1Password.",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "exit 0",
     "build": "tsc"
   },
-  "keywords": [],
+  "keywords": ["1password, env variables, env file"],
   "author": "jackblatch",
-  "license": "ISC",
+  "publishConfig": {
+    "@jackblatch:registry": "https://npm.pkg.github.com"
+  }, 
+  "license": "MIT",
   "bin": "./dist/index.js",
   "dependencies": {
     "inquirer": "^9.2.7",
