@@ -1,6 +1,6 @@
 {
   "name": "@jackblatch/1password-env-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Quickly and easily generate your .env file from credentials stored in 1Password.",
   "main": "index.js",
   "type": "module",
