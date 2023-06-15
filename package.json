@@ -15,6 +15,9 @@
   }, 
   "license": "MIT",
   "bin": "./dist/index.js",
+  "repository": {
+    "url": "https://github.com/jackblatch/1password-env-generator.git"
+  },
   "dependencies": {
     "inquirer": "^9.2.7",
     "nanospinner": "^1.1.0"
