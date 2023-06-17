@@ -2,15 +2,15 @@
 Quickly and easily generate your .env file from credentials stored in 1Password.
 
 ## About
-This script is designed to be used with the 1Password CLI. It will ask you a few questions about the item you want to use, and then generate formatted .env key/value pairs for you.
+This script is designed to be used with the 1Password CLI. The generator will ask you a few questions about the item you want to use, and then generate formatted .env key/value pairs for you.
 
 ## Requirements
 To use this package, the 1Password CLI must be installed on your device and logged in.
 
 ## Running the script
-To run the script simply enter `npx 1password-env-generator` in your terminal.
+To run the script simply enter `npx generate-1password-env` in your terminal.
 
-![Demo](/.github/assets/demo.gif?raw=0)
+![Demo](/.github/assets/cli-example.png?raw=0)
 
 ## Documentation
 In order for the script to run correctly, it expects that an item is created in 1Password with the following:
