@@ -1,6 +1,6 @@
 {
-  "name": "generate-1password-env",
-  "version": "1.0.2",
+  "name": "1p-env",
+  "version": "1.0.0",
   "description": "Quickly and easily generate your .env file from credentials stored in 1Password.",
   "main": "index.js",
   "type": "module",
@@ -18,7 +18,7 @@
   "license": "MIT",
   "bin": "./dist/index.js",
   "repository": {
-    "url": "https://github.com/jackblatch/generate-1password-env.git"
+    "url": "https://github.com/jackblatch/1password-env-generator.git"
   },
   "dependencies": {
     "inquirer": "^9.2.7",
